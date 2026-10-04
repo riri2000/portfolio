@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rihab Assabar, développeuse logicielle</title>
+<meta name="description" content="Rihab Assabar, développeuse logicielle diplômée de l'Université Laval, à la recherche de son premier poste. Projets, expérience et contact.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F8F9FB">
+<meta property="og:title" content="Rihab Assabar, développeuse logicielle">
+<meta property="og:description" content="Développeuse logicielle à la recherche de son premier poste. Projets, expérience et contact.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232D46D6'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='700' text-anchor='middle' fill='white'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:opsz,wght@8..60,400..600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #F8F9FB;
+    --ink: #151B2C;
+    --muted: #586179;
+    --rule: #DCE0EA;
+    --accent: #2D46D6;
+    --accent-dark: #1E33AE;
+    --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --text: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --measure: 62ch;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--text);
+    font-size: 1.125rem;
+    line-height: 1.65;
+  }
+
+  /* Language switching: the page ships both languages, the html lang
+     attribute decides which one is visible. */
+  html[lang="fr"] .en { display: none !important; }
+  html[lang="en"] .fr { display: none !important; }
+
+  :focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .skip {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--ink);
+    color: #fff;
+    padding: .6rem 1rem;
+    font-family: var(--display);
+    z-index: 10;
+  }
+  .skip:focus { left: 1rem; top: 1rem; }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 3rem);
+  }
+
+  /* Top bar */
+  .top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: .75rem 1.5rem;
+    padding: 1.5rem 0;
+  }
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1.5rem;
+  }
+  .nav-link {
+    font-family: var(--display);
+    font-size: .98rem;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-link:hover { color: var(--accent); }
+
+  .lang-toggle {
+    font-family: var(--display);
+    font-size: .92rem;
+    font-weight: 500;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: .35rem .8rem;
+    cursor: pointer;
+  }
+  .lang-toggle:hover { border-color: var(--ink); }
+
+  /* Hero */
+  .hero {
+    padding: clamp(3rem, 9vw, 6.5rem) 0 clamp(3rem, 8vw, 5.5rem);
+  }
+  .hero-name {
+    font-family: var(--display);
+    font-weight: 800;
+    font-stretch: 85%;
+    font-size: clamp(3.2rem, 11.5vw, 8.5rem);
+    line-height: .95;
+    letter-spacing: -.035em;
+    margin: 0 0 1.75rem;
+  }
+  .hero-role {
+    font-family: var(--display);
+    font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.3;
+    max-width: 38ch;
+    margin: 0;
+  }
+  .hero-lede {
+    max-width: var(--measure);
+    margin: 1.5rem 0 0;
+  }
+  .hero-status {
+    max-width: var(--measure);
+    margin: 1.75rem 0 0;
+    padding-left: 1rem;
+    border-left: 4px solid var(--accent);
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.75rem;
+    margin-top: 2rem;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: .8rem 1.5rem;
+    border-radius: 6px;
+  }
+  .btn:hover { background: var(--accent-dark); }
+
+  .textlink {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: .25em;
+  }
+  .textlink:hover { color: var(--accent); }
+
+  /* One entrance: the hero, once, on load */
+  @media (prefers-reduced-motion: no-preference) {
+    .rise {
+      animation: rise .7s cubic-bezier(.2, .7, .2, 1) both;
+    }
+    .rise-2 { animation-delay: .08s; }
+    .rise-3 { animation-delay: .16s; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: none; }
+    }
+  }
+
+  /* Sections: heading on the left, content on the right */
+  .section {
+    display: grid;
+    grid-template-columns: minmax(0, 200px) minmax(0, 1fr);
+    gap: 1.5rem clamp(1.5rem, 5vw, 4rem);
+    border-top: 1px solid var(--rule);
+    padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+  }
+  .section-title {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    line-height: 1.2;
+    margin: 0;
+    align-self: start;
+    position: sticky;
+    top: 1.5rem;
+  }
+  .section-body {
+    max-width: var(--measure);
+  }
+
+  .fig { margin: 0 0 1.5rem; }
+  .fig-art {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+  }
+  .fig-inline { margin: 1.25rem 0 0; }
+  .fig-shot {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+  }
+  .art-text {
+    font-family: var(--display);
+    font-weight: 700;
+  }
+  .fig-caption {
+    margin: .6rem 0 0;
+    color: var(--muted);
+    font-size: .95rem;
+    line-height: 1.5;
+  }
+
+  .item { padding-top: 0; }
+  .item-next {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .item-title {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -.015em;
+    line-height: 1.2;
+    margin: 0;
+  }
+  .meta {
+    margin: .3rem 0 0;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+  .desc {
+    margin: .9rem 0 0;
+  }
+  .stack {
+    margin: .9rem 0 0;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+  .item-links {
+    margin: .9rem 0 0;
+  }
+
+  /* Skills */
+  .skills { margin: 0; }
+  .skill-row {
+    display: grid;
+    grid-template-columns: 12rem minmax(0, 1fr);
+    gap: .25rem 1.5rem;
+    padding: .8rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  .skill-row:first-child { border-top: 0; padding-top: 0; }
+  .skill-label {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0;
+  }
+  .skill-value {
+    margin: 0;
+  }
+
+  /* Contact */
+  .contact-lead { margin: 0 0 1rem; }
+  .mail {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.4rem, 4vw, 2.25rem);
+    letter-spacing: -.01em;
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: .2em;
+    overflow-wrap: anywhere;
+  }
+  .mail:hover { color: var(--accent-dark); }
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem 1.75rem;
+    margin: 1.75rem 0 0;
+  }
+
+  .footer {
+    border-top: 1px solid var(--rule);
+    padding: 1.75rem 0 3rem;
+    color: var(--muted);
+    font-size: .95rem;
+  }
+  .footer-text { margin: 0; }
+
+  @media (max-width: 760px) {
+    .section { grid-template-columns: minmax(0, 1fr); }
+    .section-title { position: static; }
+    .skill-row { grid-template-columns: minmax(0, 1fr); }
+  }
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main"><span class="fr">Aller au contenu</span><span class="en">Skip to content</span></a>
+
+<div class="wrap">
+  <header class="top">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="nav-link" href="#projets"><span class="fr">Projets</span><span class="en">Projects</span></a>
+      <a class="nav-link" href="#experience"><span class="fr">Expérience</span><span class="en">Experience</span></a>
+      <a class="nav-link" href="#competences"><span class="fr">Compétences</span><span class="en">Skills</span></a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+    <button class="lang-toggle" id="lang-toggle" type="button" lang="en">English</button>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <h1 class="hero-name rise">Rihab Assabar</h1>
+
+      <p class="hero-role rise rise-2 fr">Développeuse logicielle, diplômée en génie logiciel de l'Université Laval.</p>
+      <p class="hero-role rise rise-2 en">Software developer with a software engineering degree from Université Laval.</p>
+
+      <p class="hero-status rise rise-2 fr">À la recherche de mon premier poste en développement logiciel.</p>
+      <p class="hero-status rise rise-2 en">Looking for my first software development role.</p>
+
+      <p class="hero-lede rise rise-3 fr">J'ai passé un an et demi chez ABB à travailler sur des systèmes industriels, puis livré une plateforme de veille à Bentley Systems avec une équipe de cinq personnes. À côté, je construis des projets pour comprendre comment les choses se brisent, et comment les réparer.</p>
+      <p class="hero-lede rise rise-3 en">I spent a year and a half at ABB working on industrial systems, then delivered a monitoring platform to Bentley Systems with a team of five. On the side, I build projects to understand how things break, and how to fix them.</p>
+
+      <div class="actions rise rise-3">
+        <a class="btn" href="mailto:rihab-2000@hotmail.fr"><span class="fr">M'écrire</span><span class="en">Email me</span></a>
+        <a class="textlink" href="https://github.com/riri2000">GitHub</a>
+        <a class="textlink" href="https://www.linkedin.com/in/rihab-assabar">LinkedIn</a>
+        <a class="textlink fr" href="CV_Rihab_Assabar_FR.pdf">Mon CV (PDF)</a>
+        <a class="textlink en" href="CV_Rihab_Assabar_EN.pdf">My résumé (PDF)</a>
+      </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section class="section" id="projets" aria-labelledby="projets-title">
+      <h2 class="section-title" id="projets-title"><span class="fr">Projets</span><span class="en">Projects</span></h2>
+      <div class="section-body">
+
+        <article class="item">
+          <figure class="fig">
+          <svg class="fig-art" viewBox="0 0 640 320" aria-hidden="true" focusable="false">
+      <circle cx="124" cy="160" r="25" fill="none" stroke="#DCE0EA" stroke-width="1.5"/>
+      <circle cx="124" cy="160" r="50" fill="none" stroke="#DCE0EA" stroke-width="1.5"/>
+      <circle cx="124" cy="160" r="75" fill="none" stroke="#DCE0EA" stroke-width="1.5"/>
+      <circle cx="124" cy="160" r="100" fill="none" stroke="#DCE0EA" stroke-width="1.5"/>
+      <line x1="24" y1="160" x2="224" y2="160" stroke="#DCE0EA" stroke-width="1.5"/>
+      <line x1="124" y1="60" x2="124" y2="260" stroke="#DCE0EA" stroke-width="1.5"/>
+      <path d="M124 160 L141.4 61.5 A100 100 0 0 1 205.9 102.6 Z" fill="#2D46D6" fill-opacity=".15" stroke="#2D46D6" stroke-opacity=".35" stroke-width="1.2"/>
+      <line x1="124" y1="160" x2="205.9" y2="102.6" stroke="#2D46D6" stroke-width="2"/>
+      <circle cx="80" cy="110" r="3.5" fill="#9AA3B8" fill-opacity=".75"/>
+      <circle cx="168" cy="190" r="3.5" fill="#9AA3B8" fill-opacity=".75"/>
+      <circle cx="100" cy="215" r="3.5" fill="#9AA3B8" fill-opacity=".75"/>
+      <circle cx="60" cy="170" r="3.5" fill="#9AA3B8" fill-opacity=".75"/>
+      <circle cx="150" cy="230" r="3.5" fill="#9AA3B8" fill-opacity=".75"/>
+      <circle cx="90" cy="150" r="3.5" fill="#9AA3B8" fill-opacity=".75"/>
+      <circle cx="180" cy="150" r="3.5" fill="#9AA3B8" fill-opacity=".75"/>
+      <circle cx="70" cy="200" r="3.5" fill="#9AA3B8" fill-opacity=".75"/>
+      <circle cx="130" cy="95" r="3.5" fill="#9AA3B8" fill-opacity=".75"/>
+      <circle cx="110" cy="130" r="3.5" fill="#9AA3B8" fill-opacity=".75"/>
+      <circle cx="155" cy="170" r="3.5" fill="#9AA3B8" fill-opacity=".75"/>
+      <circle cx="100" cy="185" r="3.5" fill="#9AA3B8" fill-opacity=".75"/>
+      <circle cx="52" cy="140" r="3.5" fill="#9AA3B8" fill-opacity=".75"/>
+      <circle cx="196" cy="176" r="3.5" fill="#9AA3B8" fill-opacity=".75"/>
+      <circle cx="146" cy="86" r="9" fill="none" stroke="#2D46D6" stroke-opacity=".3" stroke-width="1.5"/>
+      <circle cx="146" cy="86" r="5" fill="#2D46D6"/>
+      <circle cx="160" cy="108" r="9" fill="none" stroke="#2D46D6" stroke-opacity=".3" stroke-width="1.5"/>
+      <circle cx="160" cy="108" r="5" fill="#2D46D6"/>
+      <circle cx="186" cy="104" r="9" fill="none" stroke="#2D46D6" stroke-opacity=".3" stroke-width="1.5"/>
+      <circle cx="186" cy="104" r="5" fill="#2D46D6"/>
+      <circle cx="124" cy="160" r="4" fill="#151B2C"/>
+      <line x1="226" y1="160" x2="244" y2="160" stroke="#2D46D6" stroke-width="2.5"/>
+      <circle cx="262" cy="160" r="18" fill="#2D46D6"/>
+      <text class="art-text fr" x="262" y="166" text-anchor="middle" font-size="16" fill="#fff">IA</text>
+      <text class="art-text en" x="262" y="166" text-anchor="middle" font-size="16" fill="#fff">AI</text>
+      <line x1="280" y1="160" x2="292" y2="160" stroke="#2D46D6" stroke-width="2.5"/>
+      <polygon points="289,153 300,160 289,167" fill="#2D46D6"/>
+      <rect x="300" y="28" width="316" height="262" rx="8" fill="#fff" stroke="#DCE0EA" stroke-width="1.5"/>
+      <line x1="300" y1="54" x2="616" y2="54" stroke="#EEF1FA" stroke-width="1.5"/>
+      <circle cx="316" cy="41" r="3.5" fill="#DCE0EA"/><circle cx="330" cy="41" r="3.5" fill="#DCE0EA"/><circle cx="344" cy="41" r="3.5" fill="#DCE0EA"/>
+      <rect x="316" y="66" width="52" height="18" rx="9" fill="#2D46D6"/>
+      <rect x="326" y="73" width="32" height="4" rx="2" fill="#fff" fill-opacity=".85"/>
+      <rect x="374" y="66" width="64" height="18" rx="9" fill="#EEF1FA"/>
+      <rect x="384" y="73" width="44" height="4" rx="2" fill="#9AA3B8"/>
+      <rect x="444" y="66" width="48" height="18" rx="9" fill="#EEF1FA"/>
+      <rect x="454" y="73" width="28" height="4" rx="2" fill="#9AA3B8"/>
+      <rect x="548" y="66" width="52" height="18" rx="9" fill="#fff" stroke="#DCE0EA" stroke-width="1.5"/>
+      <circle cx="562" cy="75" r="4" fill="none" stroke="#151B2C" stroke-width="1.5"/>
+      <line x1="565" y1="78" x2="569" y2="82" stroke="#151B2C" stroke-width="1.5" stroke-linecap="round"/>
+      <rect x="316" y="96" width="284" height="100" rx="4" fill="#fff" stroke="#DCE0EA" stroke-width="1.5"/>
+      <line x1="328" y1="130" x2="588" y2="130" stroke="#EEF1FA" stroke-width="1.5"/>
+      <line x1="328" y1="158" x2="588" y2="158" stroke="#EEF1FA" stroke-width="1.5"/>
+      <polygon points="328,176 354,168 380,172 406,150 432,156 458,132 484,138 510,118 536,126 562,112 588,116 588,188 328,188" fill="#2D46D6" fill-opacity=".10"/>
+      <polyline points="328,180 354,178 380,174 406,176 432,168 458,170 484,160 510,162 536,154 562,156 588,150" fill="none" stroke="#9AA3B8" stroke-width="2" stroke-linejoin="round"/>
+      <polyline points="328,176 354,168 380,172 406,150 432,156 458,132 484,138 510,118 536,126 562,112 588,116" fill="none" stroke="#2D46D6" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="588" cy="116" r="4.5" fill="#2D46D6"/>
+      <circle cx="326" cy="217" r="4" fill="#2D46D6"/>
+      <rect x="338" y="214" width="190" height="6" rx="3" fill="#586179" fill-opacity=".9"/>
+      <rect x="546" y="210" width="48" height="14" rx="7" fill="#EEF1FA" stroke="#2D46D6" stroke-width="1.2"/>
+      <circle cx="326" cy="241" r="4" fill="#9AA3B8"/>
+      <rect x="338" y="238" width="150" height="6" rx="3" fill="#586179" fill-opacity=".55"/>
+      <rect x="546" y="234" width="48" height="14" rx="7" fill="#EEF1FA" stroke="#2D46D6" stroke-width="1.2"/>
+      <circle cx="326" cy="265" r="4" fill="#9AA3B8"/>
+      <rect x="338" y="262" width="170" height="6" rx="3" fill="#586179" fill-opacity=".55"/>
+      <rect x="546" y="258" width="48" height="14" rx="7" fill="#EEF1FA" stroke="#9AA3B8" stroke-width="1.2"/>
+    </svg>
+          <figcaption class="fig-caption fr">Illustration générique : le système balaie des articles de sources variées (le radar), puis les présente triés par sujet, avec leurs tendances, dans un tableau de bord.</figcaption>
+          <figcaption class="fig-caption en">Generic illustration: the system scans articles from many sources (the radar), then presents them sorted by topic, with their trends, in a dashboard.</figcaption>
+        </figure>
+        <h3 class="item-title">InfoRadarAI</h3>
+          <p class="meta fr">Projet en génie logiciel pour Bentley Systems, hiver 2026</p>
+          <p class="meta en">Software engineering project for Bentley Systems, winter 2026</p>
+          <p class="desc fr">Une plateforme de veille automatisée qui s'appuie sur l'intelligence artificielle, conçue pour un vrai client. J'ai coordonné les rencontres avec Bentley Systems et réparti les tâches dans une équipe de cinq. Côté technique : des API REST en Flask selon une architecture microservices, un pipeline CI/CD avec Docker et des tests d'intégration.</p>
+          <p class="desc en">An automated monitoring platform powered by artificial intelligence, built for a real client. I coordinated the meetings with Bentley Systems and split the work across a team of five. On the technical side: REST APIs in Flask with a microservices architecture, a CI/CD pipeline with Docker, and integration tests.</p>
+          <p class="stack">Python, Flask, Vue.js, Docker, CI/CD</p>
+        </article>
+
+        <article class="item item-next">
+          <figure class="fig">
+          <img class="fig-shot" src="images/secureapi-docs.webp" width="1400" height="810" loading="lazy" decoding="async"
+               data-alt-fr="Capture d'écran de la documentation interactive de SecureAPI : les routes d'authentification (inscription, connexion, rafraîchissement, déconnexion) et les routes de notes, ces dernières marquées d'un cadenas."
+               data-alt-en="Screenshot of the SecureAPI interactive documentation: the authentication routes (register, login, refresh, logout) and the notes routes, the latter marked with a padlock."
+               alt="Capture d'écran de la documentation interactive de SecureAPI : les routes d'authentification (inscription, connexion, rafraîchissement, déconnexion) et les routes de notes, ces dernières marquées d'un cadenas.">
+          <figcaption class="fig-caption fr">Capture d'écran : la documentation interactive de l'API. Les cadenas marquent les routes qui exigent une connexion.</figcaption>
+          <figcaption class="fig-caption en">Screenshot: the API's interactive documentation. The padlocks mark the routes that require a login.</figcaption>
+        </figure>
+        <h3 class="item-title">SecureAPI</h3>
+          <p class="meta fr">Projet personnel</p>
+          <p class="meta en">Personal project</p>
+          <p class="desc fr">Une API REST (FastAPI) où chaque protection contre les failles du OWASP Top 10 est accompagnée d'un test qui essaie de la contourner : injections SQL, jetons JWT falsifiés, trop de tentatives de connexion. 33 tests, dont 15 tests d'attaque, et un scan de sécurité à chaque commit.</p>
+          <p class="desc en">A REST API (FastAPI) where every protection against the OWASP Top 10 vulnerabilities comes with a test that tries to get around it: SQL injection, forged JWTs, too many login attempts. 33 tests, 15 of them attack tests, plus a security scan on every commit.</p>
+          <p class="desc fr">En cours de route, ma propre politique de sécurité bloquait la page de documentation de l'API. Je l'ai assouplie sur ces routes seulement et laissé le reste strict.</p>
+          <p class="desc en">Along the way, my own security policy blocked the API's documentation page. I loosened it for those routes only and left the rest strict.</p>
+          <figure class="fig fig-inline">
+            <img class="fig-shot" src="images/secureapi-tests.webp" width="1260" height="372" loading="lazy" decoding="async"
+                 data-alt-fr="Capture d'écran du terminal : les 33 tests de SecureAPI réussissent, répartis en cinq fichiers dont l'authentification, les injections, la falsification de jetons, la limite de requêtes et les validations XSS."
+                 data-alt-en="Terminal screenshot: all 33 SecureAPI tests pass, spread across five files covering authentication, injections, token tampering, rate limiting and XSS validation."
+                 alt="Capture d'écran du terminal : les 33 tests de SecureAPI réussissent, répartis en cinq fichiers dont l'authentification, les injections, la falsification de jetons, la limite de requêtes et les validations XSS.">
+            <figcaption class="fig-caption fr">Capture d'écran : les 33 tests passent, dont ceux qui simulent des attaques.</figcaption>
+            <figcaption class="fig-caption en">Screenshot: all 33 tests pass, including the ones that simulate attacks.</figcaption>
+          </figure>
+          <p class="stack">Python, FastAPI, SQLAlchemy, Pydantic, pytest, GitHub Actions</p>
+          <p class="item-links"><a class="textlink" href="https://github.com/riri2000/SecureAPI"><span class="fr">Voir le code sur GitHub</span><span class="en">View the code on GitHub</span></a></p>
+        </article>
+
+        <article class="item item-next">
+          <figure class="fig">
+          <img class="fig-shot" src="images/embedwatch-dashboard.webp" width="1400" height="993" loading="lazy" decoding="async"
+               data-alt-fr="Capture d'écran du tableau de bord EmbedWatch : un tableau qui liste en direct les mesures de température, d'humidité et de batterie des capteurs simulés."
+               data-alt-en="Screenshot of the EmbedWatch dashboard: a table listing live temperature, humidity and battery readings from the simulated sensors."
+               alt="Capture d'écran du tableau de bord EmbedWatch : un tableau qui liste en direct les mesures de température, d'humidité et de batterie des capteurs simulés.">
+          <figcaption class="fig-caption fr">Capture d'écran : le tableau de bord reçoit en direct les mesures des trois capteurs simulés.</figcaption>
+          <figcaption class="fig-caption en">Screenshot: the dashboard receives the readings from the three simulated sensors live.</figcaption>
+        </figure>
+        <h3 class="item-title">EmbedWatch</h3>
+          <p class="meta fr">Projet personnel</p>
+          <p class="meta en">Personal project</p>
+          <p class="desc fr">Un simulateur d'objets connectés : des capteurs virtuels publient leurs mesures par MQTT vers un serveur qui les enregistre et les affiche en direct dans le navigateur. Si la connexion tombe, l'appareil garde ses mesures en mémoire et les renvoie à la reconnexion. Les tests d'intégration tournent contre un vrai broker Mosquitto.</p>
+          <p class="desc en">A simulator for connected devices: virtual sensors publish their readings over MQTT to a server that stores them and shows them live in the browser. If the connection drops, the device holds its readings and sends them again once it reconnects. The integration tests run against a real Mosquitto broker.</p>
+          <p class="stack">Python, FastAPI, MQTT (Mosquitto), WebSocket, SQLite</p>
+          <p class="item-links"><a class="textlink" href="https://github.com/riri2000/EmbedWatch"><span class="fr">Voir le code sur GitHub</span><span class="en">View the code on GitHub</span></a></p>
+        </article>
+
+        <article class="item item-next">
+          <figure class="fig">
+          <img class="fig-shot" src="images/robot-autonome.webp" width="926" height="540" loading="lazy" decoding="async"
+               data-alt-fr="Illustration d'un petit robot à roues bleu qui contourne des obstacles en suivant un trajet en pointillés vers une cible, avec un cône représentant son capteur."
+               data-alt-en="Illustration of a small blue wheeled robot going around obstacles along a dotted path toward a target, with a cone showing its sensor."
+               alt="Illustration d'un petit robot à roues bleu qui contourne des obstacles en suivant un trajet en pointillés vers une cible, avec un cône représentant son capteur.">
+          <figcaption class="fig-caption fr">Illustration générée par IA (pas le robot réel) : le robot suit un trajet qui contourne les obstacles détectés par son capteur.</figcaption>
+          <figcaption class="fig-caption en">AI-generated illustration (not the actual robot): the robot follows a path that goes around the obstacles its sensor detects.</figcaption>
+        </figure>
+        <h3 class="item-title">
+            <span class="fr">Robot autonome</span><span class="en">Autonomous robot</span>
+          </h3>
+          <p class="meta fr">Cours Design III, hiver 2025</p>
+          <p class="meta en">Design III course, winter 2025</p>
+          <p class="desc fr">Un robot autonome qui navigue et évite les obstacles, programmé avec ROS2 et Python. J'ai intégré les capteurs, écrit la logique de contrôle embarquée et ajouté des tests unitaires au pipeline CI/CD, avec 95 % de couverture.</p>
+          <p class="desc en">An autonomous robot that navigates and avoids obstacles, programmed with ROS2 and Python. I integrated the sensors, wrote the embedded control logic, and added unit tests to the CI/CD pipeline, reaching 95% coverage.</p>
+          <p class="stack">Python, ROS2, CI/CD</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- EXPÉRIENCE -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <h2 class="section-title" id="experience-title"><span class="fr">Expérience</span><span class="en">Experience</span></h2>
+      <div class="section-body">
+
+        <article class="item">
+          <h3 class="item-title"><span class="fr">Développeuse logicielle</span><span class="en">Software developer</span></h3>
+          <p class="meta fr">ABB, Québec, juin à décembre 2023</p>
+          <p class="meta en">ABB, Quebec City, June to December 2023</p>
+          <p class="desc fr">J'ai ajouté des fonctionnalités au logiciel de configuration utilisé par les techniciens, refactorisé plusieurs modules pour le rendre plus simple à maintenir, et développé une fonction de configuration qui simplifie la mise en service.</p>
+          <p class="desc en">I added features to the configuration software technicians use, refactored several modules to make it easier to maintain, and built a configuration feature that makes commissioning simpler.</p>
+        </article>
+
+        <article class="item item-next">
+          <h3 class="item-title"><span class="fr">Stagiaire en génie logiciel</span><span class="en">Software engineering intern</span></h3>
+          <p class="meta fr">ABB, Québec, juin 2022 à mai 2023</p>
+          <p class="meta en">ABB, Quebec City, June 2022 to May 2023</p>
+          <p class="desc fr">J'ai programmé et configuré des protocoles industriels (Modbus, OPC) et des interfaces PLC, écrit des séquences d'analyse automatisées pour des spectromètres industriels, puis testé et mis en service les systèmes avant leur déploiement.</p>
+          <p class="desc en">I programmed and configured industrial protocols (Modbus, OPC) and PLC interfaces, wrote automated analysis sequences for industrial spectrometers, then tested and commissioned the systems before deployment.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- COMPÉTENCES -->
+    <section class="section" id="competences" aria-labelledby="competences-title">
+      <h2 class="section-title" id="competences-title"><span class="fr">Compétences</span><span class="en">Skills</span></h2>
+      <div class="section-body">
+        <dl class="skills">
+          <div class="skill-row">
+            <dt class="skill-label"><span class="fr">Langages</span><span class="en">Languages</span></dt>
+            <dd class="skill-value fr">Java, Python, JavaScript (avancé). C++, SQL (intermédiaire).</dd>
+            <dd class="skill-value en">Java, Python, JavaScript (advanced). C++, SQL (intermediate).</dd>
+          </div>
+          <div class="skill-row">
+            <dt class="skill-label"><span class="fr">Web et API</span><span class="en">Web and APIs</span></dt>
+            <dd class="skill-value">FastAPI, Flask, Vue.js, React, REST, microservices</dd>
+          </div>
+          <div class="skill-row">
+            <dt class="skill-label"><span class="fr">Embarqué et industriel</span><span class="en">Embedded and industrial</span></dt>
+            <dd class="skill-value">ROS2, MQTT, Modbus, OPC, PLC</dd>
+          </div>
+          <div class="skill-row">
+            <dt class="skill-label"><span class="fr">Tests et livraison</span><span class="en">Testing and delivery</span></dt>
+            <dd class="skill-value">pytest, JUnit, Docker, CI/CD, GitHub Actions</dd>
+          </div>
+          <div class="skill-row">
+            <dt class="skill-label"><span class="fr">Sécurité</span><span class="en">Security</span></dt>
+            <dd class="skill-value fr">OWASP Top 10, authentification JWT, validation des entrées, scans Bandit</dd>
+            <dd class="skill-value en">OWASP Top 10, JWT authentication, input validation, Bandit scans</dd>
+          </div>
+          <div class="skill-row">
+            <dt class="skill-label"><span class="fr">Langues</span><span class="en">Spoken languages</span></dt>
+            <dd class="skill-value fr">Français, anglais, arabe, espagnol</dd>
+            <dd class="skill-value en">French, English, Arabic, Spanish</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <h2 class="section-title" id="contact-title">Contact</h2>
+      <div class="section-body">
+        <p class="contact-lead fr">Je cherche mon premier poste en développement logiciel. Écrivez-moi si mon profil vous intéresse, ou pour une question sur l'un de mes projets.</p>
+        <p class="contact-lead en">I'm looking for my first software development role. Write to me if my profile interests you, or with a question about any of my projects.</p>
+        <a class="mail" href="mailto:rihab-2000@hotmail.fr">rihab-2000@hotmail.fr</a>
+        <div class="contact-links">
+          <a class="textlink" href="https://www.linkedin.com/in/rihab-assabar">LinkedIn</a>
+          <a class="textlink" href="https://github.com/riri2000">GitHub</a>
+          <a class="textlink fr" href="CV_Rihab_Assabar_FR.pdf">Mon CV (PDF)</a>
+          <a class="textlink en" href="CV_Rihab_Assabar_EN.pdf">My résumé (PDF)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-text fr">Rihab Assabar, Québec, Canada</p>
+    <p class="footer-text en">Rihab Assabar, Quebec City, Canada</p>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var button = document.getElementById('lang-toggle');
+    var titles = {
+      fr: 'Rihab Assabar, développeuse logicielle',
+      en: 'Rihab Assabar, software developer'
+    };
+
+    function setLanguage(lang) {
+      root.setAttribute('lang', lang);
+      document.title = titles[lang];
+      var shots = document.querySelectorAll('img[data-alt-fr]');
+      for (var i = 0; i < shots.length; i++) {
+        shots[i].setAttribute('alt', shots[i].getAttribute('data-alt-' + lang));
+      }
+      // The button offers the other language, so it is labelled in that language.
+      button.textContent = lang === 'fr' ? 'English' : 'Français';
+      button.setAttribute('lang', lang === 'fr' ? 'en' : 'fr');
+      try { localStorage.setItem('lang', lang); } catch (e) { /* storage can be unavailable */ }
+    }
+
+    var saved = null;
+    try { saved = localStorage.getItem('lang'); } catch (e) { /* ignore */ }
+    var browserIsEnglish = (navigator.language || 'fr').toLowerCase().indexOf('en') === 0;
+    setLanguage(saved || (browserIsEnglish ? 'en' : 'fr'));
+
+    button.addEventListener('click', function () {
+      setLanguage(root.getAttribute('lang') === 'fr' ? 'en' : 'fr');
+    });
+  })();
+</script>
+</body>
+</html>
